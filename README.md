@@ -11,10 +11,11 @@ $ cmake .. && make run
 
 ### Different with HW1
 In HW1 we declare FIFO in `main.cpp` and connect
-sc/_fifo/_in/out in Testbench and Sobelfilter 
-respectively.
+'sc_fifo_in/out' in Testbench and Sobelfilter 
+in pair.
 
-In HW2 with TLM, we only need to declare FIFO in
-Sobelfilter, because `Initiator::read\write_from_socket`
+In HW2 with TLM, `Initiator::read\write_from_socket`
 trigger `Sobelfilter::blocking_transport` and pass
-the data back by pointer.
+the data back by pointer. We don't need FIFO the 
+transmit data but store data in order, so we only
+need to declare FIFO in Sobelfilter.
